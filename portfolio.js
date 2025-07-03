@@ -27,4 +27,28 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.querySelector('.certificate-modal-close').onclick = () => modal.remove();
     });
   });
+
+  // Project Details modal
+  document.querySelectorAll('.details-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      const card = btn.closest('.card');
+      const title = card.querySelector('h2').textContent;
+      const desc = card.getAttribute('data-popup-desc') || card.querySelector('p').textContent;
+      let modal = document.createElement('div');
+      modal.className = 'project-modal';
+      modal.innerHTML = `
+        <div class="project-modal-backdrop"></div>
+        <div class="project-modal-content">
+          <button class="project-modal-close" aria-label="Close">&times;</button>
+          <h2>${title}</h2>
+          <p style="text-align: left;">${desc}</p>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      modal.querySelector('.project-modal-backdrop').onclick = () => modal.remove();
+      modal.querySelector('.project-modal-close').onclick = () => modal.remove();
+    });
+  });
 }); 

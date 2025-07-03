@@ -147,13 +147,34 @@ header p {
   font-size: 1rem;
   margin-bottom: 1.2rem;
 }
-.card-actions {
+.card-actions, .ftco-project .card-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
-  gap: 0;
   margin-top: auto;
+  gap: 0;
+}
+.details-btn, .ftco-project .details-btn {
+  width: 100%;
+  background: #ffbd39 !important;
+  color: #222 !important;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: none;
+  text-align: center;
+  box-shadow: 0 2px 8px 0 #0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+.details-btn:hover, .ftco-project .details-btn:hover {
+  background: #ffbd39 !important;
+  color: #222 !important;
 }
 .demo-link {
   color: #7f5fff;
@@ -163,20 +184,6 @@ header p {
 }
 .demo-link:hover {
   color: #ff5fc8;
-}
-.details-btn {
-  background: #2d2a4a;
-  color: #fff;
-  border: none;
-  border-radius: 1rem;
-  padding: 0.6rem 1.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-.details-btn:hover {
-  background: #7f5fff;
-  color: #fff;
 }
 @media (max-width: 1100px) {
   .tab-content.active {
@@ -623,37 +630,61 @@ header p {
 }
 
 .ftco-project #certificates .card {
-  background: #424242 !important;
+  position: relative;
+  background: #18191e !important;
   border: none !important;
   border-radius: 1.5rem;
   box-shadow: 0 4px 32px 0 #0004;
-  padding: 0;
-  position: relative;
+  padding: 1.5rem;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 220px;
-  min-height: unset;
-  max-height: 240px;
+  height: 260px;
+  min-height: 220px;
+  max-height: 300px;
+  margin-bottom: 2rem;
 }
 
 .ftco-project #certificates .card img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
   object-fit: contain;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+  box-shadow: none;
 }
 
-.ftco-project #certificates .card .view-certificate-overlay,
-.ftco-project #certificates .card .img-container:hover .view-certificate-overlay {
-  display: none !important;
+.ftco-project #certificates .card .view-certificate-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 2;
+  text-align: center;
+}
+
+.ftco-project #certificates .card:hover .view-certificate-overlay {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .ftco-project .card,
 .ftco-project .tech-card {
-  background: linear-gradient(90deg, #232526 0%, #000000 100%);
-  color: #fff;
+  background: #181818 !important;
+  color: #fff !important;
 }
 
 .ftco-project .card h2,
@@ -666,8 +697,8 @@ header p {
 @media (max-width: 600px) {
   .ftco-project .card,
   .ftco-project .tech-card {
-    background: linear-gradient(90deg, #232526 0%, #000000 100%);
-    color: #fff;
+    background: #181818 !important;
+    color: #fff !important;
   }
   .ftco-project .card h2,
   .ftco-project .card p,
@@ -779,10 +810,10 @@ header p {
 
 .certificate-modal-close {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  z-index: 20;
-  background: rgba(0,0,0,0.15);
+  top: 24px;
+  right: 24px;
+  z-index: 100;
+  background: #222;
   color: #fff;
   border: none;
   font-size: 2.5rem;
@@ -790,13 +821,232 @@ header p {
   border-radius: 50%;
   width: 48px;
   height: 48px;
-  line-height: 44px;
+  line-height: 48px;
   text-align: center;
   cursor: pointer;
-  transition: background 0.2s;
+  opacity: 1;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+  transition: background 0.2s;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .certificate-modal-close:hover {
+  background: #444;
+}
+
+.certificate-card-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
   background: rgba(0,0,0,0.35);
   color: #fff;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+  pointer-events: auto;
+}
+.card:hover .certificate-card-close {
+  opacity: 1;
+}
+.certificate-card-close:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.project-modal {
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-modal-backdrop {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+}
+.project-modal-content {
+  position: relative;
+  background: #181818;
+  color: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.5);
+  max-width: 800px;
+  width: 98vw;
+  padding: 2rem 2rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  padding: 32px 24px;
+  border-radius: 24px;
+  background: #222;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+/* Optional: style the scrollbar for a modern look */
+.project-modal-content::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.project-modal-content::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+.project-modal-content::-webkit-scrollbar-track {
+  background: #222;
+}
+
+.project-modal-content h2 {
+  color: #ffbd39;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+.project-modal-content p {
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+.project-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 100;
+  background: #222;
+  color: #fff;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 1;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+  transition: background 0.2s;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-modal-close:hover {
+  background: #444;
+}
+
+.key-tech-col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.key-tech-label {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+  color: #ffd700;
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+
+.key-tech-col-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.key-tech-item {
+  display: flex;
+  align-items: center;
+  width: 25%; /* 4 per row */
+  min-width: 140px;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.key-tech-icon {
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
+  transition: transform 0.15s;
+}
+
+.key-tech-icon:hover {
+  transform: scale(1.12) rotate(-5deg);
+  filter: drop-shadow(0 2px 6px rgba(80,80,80,0.18));
+}
+
+.about-project-label {
+  font-weight: bold;
+  color: #ffd700;
+  display: block;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.5px;
+}
+
+.about-project-desc {
+  text-align: left;
+}
+
+.about-project-list {
+  margin-bottom: 1.2em;
+  padding-left: 1.2em;
+  list-style: disc inside;
+}
+
+#projects .tab-content.active .row, .ftco-project .row {
+  gap: 2rem 0;
+}
+@media (max-width: 700px) {
+  #projects .tab-content.active .row, .ftco-project .row {
+    gap: 1rem 0;
+  }
+}
+
+.see-more-btn {
+  display: block;
+  margin: 2rem 0 0 0;
+  padding: 0.8rem 2.2rem;
+  border-radius: 12px;
+  border: 1px solid #444;
+  background: rgba(20,20,30,0.7);
+  color: #e5e7eb;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+}
+.see-more-btn:hover {
+  background: #23233b;
+  color: #fff;
+  border-color: #666;
+}
+.hidden-project {
+  display: none;
+}
+
+.services-1 img {
+  filter: brightness(0) saturate(100%) invert(80%) sepia(70%) saturate(600%) hue-rotate(0deg) brightness(105%) contrast(105%);
 }
