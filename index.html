@@ -73,7 +73,7 @@
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/R\ BG\ 1.png);">
+	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/R\ BG\ 1.png);" height="800px">
 	          		<div class="overlay"></div>
 	          	</div>
 		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
@@ -95,7 +95,7 @@
     			<div class="col-md-6 col-lg-5 d-flex">
     				<div class="img-about img d-flex align-items-stretch">
     					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/bg_1.png);">
+	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/R\ BG\ 1.png);">
 	    				</div>
     				</div>
     			</div>
@@ -552,7 +552,7 @@
                     <span>React.js</span>
                   </div>
                   <div class="tech-card">
-                    <img src="https://img.icons8.com/color/48/ffbd39/api-settings.png" alt="API Development" />
+                    <img src="https://img.icons8.com/color/48/api-settings.png" alt="API Development" />
                     <span>API Development</span>
                   </div>
                   <div class="tech-card">
@@ -782,7 +782,7 @@
           </div>
         </div>
 
-        <div class="row no-gutters block-9">
+        <!-- <div class="row no-gutters block-9">
           <!--
           <div class="col-md-6 order-md-last d-flex">
             <form action="#" class="bg-light p-4 p-md-5 contact-form">
@@ -804,13 +804,12 @@
             </form>
           </div>
           -->
-          <div class="col-md-6 d-flex">
+          <!-- <div class="col-md-6 d-flex">
           	<div class="img" style="background-image: url(images/about.jpg);"></div>
           </div>
         </div>
       </div>
-    </section>
-		
+    </section> -->
 
     <footer class="ftco-footer ftco-section py-5">
       <div class="container">
@@ -888,32 +887,6 @@
   
   <script src="js/main.js"></script>
   <script src="portfolio.js"></script>
-  <script>
-// Move Owl Carousel dots inside the hero image column after initialization
-$(document).ready(function() {
-  function moveHeroDots() {
-    // For each hero slide, move the dots inside the image column
-    $('.home-slider').each(function() {
-      var $slider = $(this);
-      var $dots = $slider.find('.owl-dots');
-      // Only move if not already inside
-      $slider.find('.slider-item').each(function() {
-        var $slide = $(this);
-        var $imgCol = $slide.find('.one-third.img');
-        if ($imgCol.length && $dots.length && !$imgCol.find('.owl-dots').length) {
-          $imgCol.append($dots);
-        }
-      });
-    });
-  }
-  // Wait for Owl Carousel to initialize
-  $('.home-slider').on('initialized.owl.carousel', function() {
-    moveHeroDots();
-  });
-  // Also run on page load in case already initialized
-  moveHeroDots();
-});
-</script>
     
   </body>
 </html>
