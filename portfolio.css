@@ -80,7 +80,7 @@ header p {
   transition: color 0.3s;
 }
 .tab.active {
-  background: linear-gradient(45deg, #e0a800, #806600) !important;
+  background: #ffc043 !important;
   color: #fff !important;
   font-weight: bold;
   box-shadow: none;
@@ -337,7 +337,7 @@ header p {
 }
 
 .ftco-project .tab.active {
-  background: linear-gradient(45deg, #e0a800, #806600) !important;
+  background: #ffc043 !important;
   color: #fff !important;
   font-weight: bold;
   box-shadow: none;
@@ -402,8 +402,6 @@ header p {
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
   border: 1px solid rgba(255,255,255,0.1);
-  height: 300px;
-  min-height: 400px;
   margin-top: 4px;
 }
 
@@ -1048,5 +1046,199 @@ header p {
 }
 
 .services-1 img {
-  filter: brightness(0) saturate(100%) invert(80%) sepia(70%) saturate(600%) hue-rotate(0deg) brightness(105%) contrast(105%);
+  filter: none !important;
+  /* Use the yellow color directly for SVGs or PNGs that support it */
+  /* For SVGs, you may need to set fill or stroke via CSS or inline SVG */
+}
+
+.nav-link:hover, .nav-link:focus {
+  background: #ffc043 !important;
+  color: #222 !important;
+  border-radius: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  color: #ffbd39 !important;
+}
+
+.slider-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  height: 80vh;
+}
+.slider-text .img {
+  flex: 0 0 320px;
+  min-width: 220px;
+  max-width: 380px;
+  height: 380px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.5rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider-text .text {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 260px;
+  max-width: 520px;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .slider-text {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .slider-text .img, .slider-text .text {
+    max-width: 95vw;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.home-slider .slider-item .slider-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Vertically center image and text */
+  justify-content: center;
+  min-height: 480px;
+  gap: 2.5rem;
+  height: 80vh;
+}
+.home-slider .slider-item .img {
+  flex: 0 0 320px;
+  min-width: 220px;
+  max-width: 380px;
+  height: 380px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.5rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 32px 0 #0004;
+}
+.home-slider .slider-item .text {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 260px;
+  max-width: 520px;
+  margin: 0;
+  height: auto;
+}
+.home-slider .owl-dots {
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 32px;
+  z-index: 10;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+.home-slider .owl-dot {
+  background: #fff;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  border: 2px solid #ffc043;
+  transition: background 0.2s, border 0.2s;
+}
+.home-slider .owl-dot.active {
+  background: #ffc043;
+  border-color: #ffc043;
+}
+@media (max-width: 900px) {
+  .home-slider .slider-item .slider-text {
+    flex-direction: column;
+    gap: 1.5rem;
+    min-height: 420px;
+    height: auto;
+  }
+  .home-slider .slider-item .img {
+    margin-bottom: 1.5rem;
+    height: 260px;
+    max-width: 90vw;
+  }
+}
+
+.one-third.img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 220px;
+  max-width: 380px;
+  height: 380px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.5rem;
+  margin: 0;
+  box-shadow: 0 4px 32px 0 #0004;
+}
+.one-third.img .overlay {
+  border-radius: 1.5rem;
+}
+.one-third.img .owl-dots {
+  position: static !important;
+  margin-top: 1.5rem;
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  pointer-events: auto;
+}
+.one-third.img .owl-dot {
+  background: #fff;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  border: 2px solid #ffc043;
+  transition: background 0.2s, border 0.2s;
+}
+.one-third.img .owl-dot.active {
+  background: #ffc043;
+  border-color: #ffc043;
+}
+.one-forth .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 260px;
+  max-width: 520px;
+  margin: 0;
+  height: auto;
+}
+@media (max-width: 900px) {
+  .slider-text {
+    flex-direction: column;
+    gap: 1.5rem;
+    height: auto;
+  }
+  .one-third.img {
+    margin-bottom: 1.5rem;
+    height: 260px;
+    max-width: 90vw;
+  }
 }
