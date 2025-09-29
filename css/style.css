@@ -59,6 +59,10 @@ body {
   text-align: left;
   background-color: #fff; }
 
+  #portfolio-section {
+    padding-bottom: 0 !important;
+  }
+
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 
