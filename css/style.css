@@ -18533,6 +18533,49 @@ textarea.form-control {
       display: block;
       width: 100%; } }
 
+/* Custom hover enhancements */
+.schedule-call-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  box-shadow: 0px 24px 36px -11px rgba(0, 0, 0, 0.09);
+}
+.schedule-call-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 30px 45px -12px rgba(255, 189, 57, 0.45);
+  opacity: 0.92;
+}
+
+.contact-section .box,
+.contact-section .box .icon {
+  transition: all 0.3s ease;
+}
+.contact-section .box:hover {
+  transform: translateY(-6px);
+}
+.contact-section .box:hover .icon {
+  background: rgba(255, 189, 57, 0.2);
+  transform: scale(1.08);
+}
+
+.block-23 ul li a,
+.block-23 ul li a .icon {
+  transition: color 0.3s ease;
+}
+.block-23 ul li a:hover {
+  color: #ffbd39 !important;
+}
+.block-23 ul li a:hover .icon {
+  color: #ffbd39 !important;
+}
+
+body {
+  margin-bottom: 0 !important;
+}
+
+.ftco-section:last-of-type {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 .block-9 .form-control {
   outline: none !important;
   -webkit-box-shadow: none !important;
